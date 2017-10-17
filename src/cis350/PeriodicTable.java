@@ -13,19 +13,19 @@ import java.util.ArrayList;
 import java.awt.Button;
 
 public class PeriodicTable extends JPanel{
-	
+	ArrayList<ElementButton> buttonList;
 public PeriodicTable(){
 	GridBagLayout gridBagLayout = new GridBagLayout();
 	setLayout(gridBagLayout);
 	
 	
-	ArrayList<ElementPanel> ButtonList = new ArrayList<ElementPanel>();
-	ElementPanel none = new ElementPanel();
-	ButtonList.add(none);
+	buttonList = new ArrayList<ElementButton>();
+	ElementButton none = new ElementButton(Elements.H);
+	buttonList.add(none);
 	
 	for (Elements element : Elements.values()){
-		ElementPanel temp = new ElementPanel(element);
-		ButtonList.add(temp);
+		ElementButton temp = new ElementButton(element);
+		buttonList.add(temp);
 	}
 	
 	
@@ -33,36 +33,36 @@ public PeriodicTable(){
 	loc.fill = GridBagConstraints.NONE;
 	loc.gridx = 0;
 	loc.gridy = 0;
-	add(ButtonList.get(1), loc);
+	add(buttonList.get(1), loc);
 	
 	loc.gridx = 17;
-	add(ButtonList.get(2), loc);
+	add(buttonList.get(2), loc);
 	
 	loc.gridx = 0;
 	loc.gridy = 1;
-	add(ButtonList.get(3), loc);
+	add(buttonList.get(3), loc);
 	
 	loc.gridx = 1;
-	add(ButtonList.get(4), loc);
+	add(buttonList.get(4), loc);
 	
 	int count1 = 5;
 	for (int i = 12; i <= 17; i++){
 		loc.gridx = i;
-		add(ButtonList.get(count1), loc);
+		add(buttonList.get(count1), loc);
 		count1++;
 	}
 	
 	loc.gridx = 0;
 	loc.gridy = 2;
-	add(ButtonList.get(11), loc);
+	add(buttonList.get(11), loc);
 	
 	loc.gridx = 1;
-	add(ButtonList.get(12), loc);
+	add(buttonList.get(12), loc);
 	
 	int count2 = 13;
 	for (int i = 12; i <= 17; i++){
 		loc.gridx = i;
-		add(ButtonList.get(count2), loc);
+		add(buttonList.get(count2), loc);
 		count2++;
 	}
 	
@@ -70,18 +70,18 @@ public PeriodicTable(){
 		loc.gridy = i;
 		for (int j = 0; j < 18; j++){
 			loc.gridx = j;
-			add(ButtonList.get(count2),  loc);
+			add(buttonList.get(count2),  loc);
 			count2++;
 		}
 	}
 	
 	loc.gridy = 5;
 	loc.gridx = 0;
-	add(ButtonList.get(count2), loc);
+	add(buttonList.get(count2), loc);
 	count2++;
 	
 	loc.gridx = 1;
-	add(ButtonList.get(count2), loc);
+	add(buttonList.get(count2), loc);
 	count2++;
 
 	loc.gridx = 2;
@@ -104,23 +104,23 @@ public PeriodicTable(){
 	count2 = 72;
 		for (int j = 3; j < 18; j++){
 			loc.gridx = j;
-			add(ButtonList.get(count2), loc);
+			add(buttonList.get(count2), loc);
 			count2++;
 		}
 	
 	loc.gridy = 6;
 	loc.gridx = 0;
-	add(ButtonList.get(count2), loc);
+	add(buttonList.get(count2), loc);
 	count2++;
 	
 	loc.gridx = 1;
-	add(ButtonList.get(count2), loc);
+	add(buttonList.get(count2), loc);
 	count2++;
 	
 	count2 = 104;
 	for(int i = 3; i < 18; i++){
 		loc.gridx = i;
-		add(ButtonList.get(count2), loc);
+		add(buttonList.get(count2), loc);
 		count2++;
 	}
 	
@@ -129,7 +129,7 @@ public PeriodicTable(){
 	loc.gridy = 7;
 	for (int i = 2; i < 17; i++){
 		loc.gridx = i;
-		add(ButtonList.get(count2), loc);
+		add(buttonList.get(count2), loc);
 		count2++;
 	}
 	
@@ -138,14 +138,16 @@ public PeriodicTable(){
 	count2 = 89;
 	for (int i = 2; i < 17; i++){
 		loc.gridx = i;
-		add(ButtonList.get(count2), loc);
+		add(buttonList.get(count2), loc);
 		count2++;
 	}
 	
 
 	setVisible(true);
-	
 }
+	public ElementButton findButton(int number){
+		return buttonList.get(number);
+	}
 }
 
 
