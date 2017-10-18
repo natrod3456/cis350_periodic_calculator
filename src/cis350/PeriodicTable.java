@@ -11,7 +11,7 @@ import java.awt.Insets;
 import java.util.ArrayList;
 /**
  * 
- * @author Greg, Eric, Natalie, Richard
+ * @author Greg, Eric, Natalie,Richard
  *
  */
 public class PeriodicTable extends JPanel {
