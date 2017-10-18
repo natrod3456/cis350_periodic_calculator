@@ -11,7 +11,7 @@ public class ElementButton extends JButton{
 	public ElementButton(Elements element){
 		setSize(HEIGHT, LENGTH);
 		this.setIcon(element.getIcon());
-		this.setMargin(new Insets(0,0,0,0));
+		this.setMargin(new Insets(0, 0, 0, 0));
 		this.setVisible(true);
 	}
 	
