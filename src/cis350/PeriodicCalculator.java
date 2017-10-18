@@ -15,10 +15,10 @@ public class PeriodicCalculator extends JFrame implements ActionListener {
 		table = new PeriodicTable();
 		calculator = new MathCalc();
 		remove = false;
-		table.display.updateMode("Mode: Add");
+		table.getDisplay().updateMode("Mode: Add");
 		
-		table.display.updateMolecule("empty");
-		table.display.updateWeight(0);
+		table.getDisplay().updateMolecule("empty");
+		table.getDisplay().updateWeight(0);
 		
 		setLayout(new BorderLayout());
 		add(table, BorderLayout.CENTER);
@@ -27,8 +27,8 @@ public class PeriodicCalculator extends JFrame implements ActionListener {
 			table.findButton(i).addActionListener(this);
 		}
 		
-		table.display.getClear().addActionListener(this);
-		table.display.getMode().addActionListener(this);
+		table.getDisplay().getClear().addActionListener(this);
+		table.getDisplay().getMode().addActionListener(this);
 		setVisible(true);
 		
 	}
@@ -43,26 +43,26 @@ public class PeriodicCalculator extends JFrame implements ActionListener {
 				}
 			}
 			
-			if (e.getSource() == table.display.getClear()){
+			if (e.getSource() == table.getDisplay().getClear()){
 				calculator.clearList();
-				table.display.updateMolecule("empty");
-				table.display.updateWeight(0);
+				table.getDisplay().updateMolecule("empty");
+				table.getDisplay().updateWeight(0);
 				return;
 			}
 			
 			
-			if (e.getSource() == table.display.getMode()){
+			if (e.getSource() == table.getDisplay().getMode()){
 				if (remove){
 					remove = false;
-					table.display.updateMode("Mode: Add");
+					table.getDisplay().updateMode("Mode: Add");
 				}else{
 					remove = true;
-					table.display.updateMode("Mode: Remove");
+					table.getDisplay().updateMode("Mode: Remove");
 				}
 			}
 			
-			table.display.updateMolecule(calculator.toString());
-			table.display.updateWeight(calculator.getWeight());
+			table.getDisplay().updateMolecule(calculator.toString());
+			table.getDisplay().updateWeight(calculator.getWeight());
 
 		}
 	}

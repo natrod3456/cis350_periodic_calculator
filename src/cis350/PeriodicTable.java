@@ -4,18 +4,31 @@ import java.awt.GridBagLayout;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.util.ArrayList;
-import java.awt.Button;
+/**
+ * 
+ * @author Greg, Eric, Natalie, Richard
+ *
+ */
+public class PeriodicTable extends JPanel {
+	/**
+	 * ArrayList of ElemenButtons 
+	 */
+	private ArrayList<ElementButton> buttonList;
 
-public class PeriodicTable extends JPanel{
-	ArrayList<ElementButton> buttonList;
-	MathGui display;
-public PeriodicTable(){
+	/**
+	 * A private MathGui variable 
+	 */
+	private MathGui display;
+
+/**
+ * Constructor for PeriodicTable
+ */
+public PeriodicTable() {
 	GridBagLayout gridBagLayout = new GridBagLayout();
 	setLayout(gridBagLayout);
 	display = new MathGui();
@@ -25,7 +38,8 @@ public PeriodicTable(){
 	ElementButton none = new ElementButton(Elements.H);
 	buttonList.add(none);
 	
-	for (Elements element : Elements.values()){
+	for (
+			Elements element : Elements.values()) {
 		ElementButton temp = new ElementButton(element);
 		buttonList.add(temp);
 	}
@@ -48,7 +62,8 @@ public PeriodicTable(){
 	add(buttonList.get(4), loc);
 	
 	int count1 = 5;
-	for (int i = 12; i <= 17; i++){
+	for (
+			int i = 12; i <= 17; i++) {
 		loc.gridx = i;
 		add(buttonList.get(count1), loc);
 		count1++;
@@ -62,15 +77,18 @@ public PeriodicTable(){
 	add(buttonList.get(12), loc);
 	
 	int count2 = 13;
-	for (int i = 12; i <= 17; i++){
+	for (
+			int i = 12; i <= 17; i++) {
 		loc.gridx = i;
 		add(buttonList.get(count2), loc);
 		count2++;
 	}
 	
-	for (int i = 3; i <= 4; i++){
+	for (
+			int i = 3; i <= 4; i++) {
 		loc.gridy = i;
-		for (int j = 0; j < 18; j++){
+		for (
+				int j = 0; j < 18; j++) {
 			loc.gridx = j;
 			add(buttonList.get(count2),  loc);
 			count2++;
@@ -89,7 +107,7 @@ public PeriodicTable(){
 	loc.gridx = 2;
 	ImageIcon range1 = new ImageIcon("src/E57_71.png");
 	JButton bRange1 = new JButton(range1);
-	Insets inset = new Insets(0,0,0,0);
+	Insets inset = new Insets(0, 0, 0, 0);
 	bRange1.setMargin(inset);
 	bRange1.setContentAreaFilled(false);
 	add(bRange1, loc);
@@ -104,7 +122,8 @@ public PeriodicTable(){
 
 	loc.gridy = 5;
 	count2 = 72;
-		for (int j = 3; j < 18; j++){
+		for (
+				int j = 3; j < 18; j++) {
 			loc.gridx = j;
 			add(buttonList.get(count2), loc);
 			count2++;
@@ -120,25 +139,28 @@ public PeriodicTable(){
 	count2++;
 	
 	count2 = 104;
-	for(int i = 3; i < 18; i++){
+	for (
+			int i = 3; i < 18; i++) {
 		loc.gridx = i;
 		add(buttonList.get(count2), loc);
 		count2++;
 	}
 	
-	loc.insets = new Insets(10,0,0,0);
+	loc.insets = new Insets(10, 0, 0, 0);
+	
 	count2 = 57;
 	loc.gridy = 7;
-	for (int i = 2; i < 17; i++){
+	for (int i = 2; i < 17; i++) {
 		loc.gridx = i;
 		add(buttonList.get(count2), loc);
 		count2++;
 	}
 	
-	loc.insets = new Insets(0,0,0,0);
+	loc.insets = new Insets(0, 0, 0, 0);
 	loc.gridy = 8;
 	count2 = 89;
-	for (int i = 2; i < 17; i++){
+	for (
+			int i = 2; i < 17; i++) {
 		loc.gridx = i;
 		add(buttonList.get(count2), loc);
 		count2++;
@@ -153,9 +175,31 @@ public PeriodicTable(){
 
 	setVisible(true);
 }
-	public ElementButton findButton(int number){
+/**
+ * 
+ * @param number to find element button
+ * @return an elementButton according to atomic number in periodic table
+ */
+	public ElementButton findButton(final int number) {
 		return buttonList.get(number);
 	}
+	
+	/**
+	 * 
+	 * @return display of periodic table
+	 */
+public MathGui getDisplay() {
+		return display;
+	}
+
+/**
+ * 
+ * @return an array list of buttons
+ */
+public ArrayList<ElementButton> getButtonList() {
+	return buttonList;
+}
+
 }
 
 
