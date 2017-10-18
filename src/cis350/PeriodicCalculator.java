@@ -34,11 +34,12 @@ public class PeriodicCalculator extends JFrame implements ActionListener{
 				}
 				else
 					count = 1;
-				System.out.println(i + " pressed " + count + " time(s)!");
+				System.out.println(table.addElement(i, count));
 				testButton = b;
 			}
 
 		}
+		
 		
 	}
 
