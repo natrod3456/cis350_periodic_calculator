@@ -148,18 +148,6 @@ public PeriodicTable(){
 	public ElementButton findButton(int number){
 		return buttonList.get(number);
 	}
-	
-	public String addElement(int element, int counter){
-		Elements elem = Elements.values()[element-1];
-		if(counter == 1){
-			String temp = "" + elem;
-		return temp;
-		}
-		else{
-			String temp = "" + elem + counter;
-			return temp;
-		}
-	}
 }
 
 

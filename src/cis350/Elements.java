@@ -129,6 +129,9 @@ public enum Elements {
 	
 	
 	
+	
+	
+	
 	private final Integer atomicNumber;
 	private final Double atomicWeight;
 	private final String name;

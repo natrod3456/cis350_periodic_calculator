@@ -4,42 +4,55 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
 
 public class PeriodicCalculator extends JFrame implements ActionListener{
 	PeriodicTable table;
-	int count = 0;
-	private JButton testButton;
+	MathCalc calculator;
+	MathGui display;
 	
 	public PeriodicCalculator(){
 		table = new PeriodicTable();
+		calculator = new MathCalc();
+		display = new MathGui();
+		display.updateMolecule("empty");
+		display.updateWeight(0);
+		
 		setLayout(new BorderLayout());
 		add(table, BorderLayout.CENTER);
+		add(display, BorderLayout.NORTH);
 		
 		for (int i = 1; i < 118; i++){
 			table.findButton(i).addActionListener(this);
 		}
+		
+		display.getClear().addActionListener(this);
+		display.getUndo().addActionListener(this);
 		setVisible(true);
 		
 	}
 	
 	public void actionPerformed(ActionEvent e) {
-		JButton b = (JButton) e.getSource();
 		for (int i = 1; i < 118; i++){
 			if (e.getSource() == table.findButton(i)){
-				if(testButton == b){
-				//mathCalc.addElement(i);
-				count++;
-				}
-				else
-					count = 1;
-				System.out.println(table.addElement(i, count));
-				testButton = b;
+				calculator.addElement(Elements.values()[i - 1]);
 			}
+			
+			if (e.getSource() == display.getClear()){
+				calculator.clearList();
+				display.updateMolecule("empty");
+				display.updateWeight(0);
+				return;
+			}
+			
+			if (e.getSource() == display.getUndo()){
+				calculator.undo();
+			}
+			
+			display.updateMolecule(calculator.toString());
+			display.updateWeight(calculator.getWeight());
 
 		}
-		
 		
 	}
 
