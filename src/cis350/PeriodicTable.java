@@ -14,9 +14,11 @@ import java.awt.Button;
 
 public class PeriodicTable extends JPanel{
 	ArrayList<ElementButton> buttonList;
+	MathGui display;
 public PeriodicTable(){
 	GridBagLayout gridBagLayout = new GridBagLayout();
 	setLayout(gridBagLayout);
+	display = new MathGui();
 	
 	
 	buttonList = new ArrayList<ElementButton>();
@@ -141,6 +143,12 @@ public PeriodicTable(){
 		add(buttonList.get(count2), loc);
 		count2++;
 	}
+	
+	loc.gridx = 2;
+	loc.gridy = 0;
+	loc.gridwidth = 10;
+	loc.gridheight = 3;
+	add(display, loc);
 	
 
 	setVisible(true);
