@@ -16,17 +16,17 @@ import java.util.ArrayList;
  */
 public class PeriodicTable extends JPanel {
 	/**
-	 * ArrayList of ElemenButtons 
+	 * ArrayList of ElemenButtons. 
 	 */
 	private ArrayList<ElementButton> buttonList;
 
 	/**
-	 * A private MathGui variable 
+	 * A private MathGui variable. 
 	 */
 	private MathGui display;
 
 /**
- * Constructor for PeriodicTable
+ * Constructor for PeriodicTable.
  */
 public PeriodicTable() {
 	GridBagLayout gridBagLayout = new GridBagLayout();
