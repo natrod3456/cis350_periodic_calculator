@@ -1,5 +1,5 @@
 /**
- * ElementButton is used to produce the element's JButton in our periodic table.
+ * ElementButton is used to produce the element's JButton in periodic table.
  * 
  * @since 10/18/2017
  * @author Greg, Eric, Natalie, Richard

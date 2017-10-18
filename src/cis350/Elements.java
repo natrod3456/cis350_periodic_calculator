@@ -18,7 +18,7 @@ import javax.swing.ImageIcon;
 public enum Elements {
 
 	/**
-	 * The elements, their weight and the corresponding image.
+	 * The elements, their weights and the corresponding image.
 	 * @param
 	 */
 	H(1, "Hydrogen", 1.008, "src/E1.png"),
