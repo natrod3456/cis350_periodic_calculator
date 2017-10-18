@@ -1,9 +1,26 @@
+/**
+ * Elements is used to create a list of the elements in the 
+ * periodic table to build the periodic table.
+ * 
+ * @since 10/18/2017
+ * @author Greg, Eric, Natalie, Richard
+ * @version 1.0
+ */
 package cis350;
 
 import javax.swing.ImageIcon;
 
+/**
+ * The enum sets a list of the elements, their weight 
+ * and an image of the element from a periodic table.
+ * @param
+ */
 public enum Elements {
 
+	/**
+	 * The elements, their weight and the corresponding image.
+	 * @param
+	 */
 	H(1, "Hydrogen", 1.008, "src/E1.png"),
 	He(2, "Helium", 4.0026, "src/E2.png"),
 	Li(3, "Lithium", 6.94, "src/E3.png"),
@@ -131,32 +148,62 @@ public enum Elements {
 	
 	
 	
-	
+	/** The atomic number of the element. **/
 	private final Integer atomicNumber;
+	
+	/** The atomic weight of the element. **/
 	private final Double atomicWeight;
+	
+	/** The name of the element. **/
 	private final String name;
+	
+	/** The icon used by this element for the GUI. **/
 	private final ImageIcon icon;
 	
-	Elements(Integer number, String formalName, Double weight, String icon){
+	/**
+	 * The constructor for the Elements class. It sets the number, 
+	 * the name and the weight. It loads the element's icon.
+	 * @param number The atomic number of the element.
+	 * @param fName The name of the element.
+	 * @param weight The atomic weight of the element.
+	 * @param icon The image of the element in our periodic table.
+	 */
+	Elements(final Integer number, final String fName, 
+			final Double weight, final String icon) {
 		atomicNumber = number;
-		name = formalName;
+		name = fName;
 		atomicWeight = weight;
 		this.icon = new ImageIcon(icon);
 		
 	}
 
+	/**
+	 * Gets the atomic number of the element.
+	 * @return atomicNumber.
+	 */
 	public Integer getAtomicNumber() {
 		return atomicNumber;
 	}
 	
+	/**
+	 * Gets the atomic weight of the element.
+	 * @return atomicWeight.
+	 */
 	public Double getAtomicWeight() {
 		return atomicWeight;
 	}
 	
+	/**
+	 * Gets the name of the element.
+	 * @return name.
+	 */
 	public String getName() {
 		return name;
 	}
-	
+	/**
+	 * Gets the icon image for the element.
+	 * @return icon.
+	 */
 	public ImageIcon getIcon() {
 		return icon;
 	}
