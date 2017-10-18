@@ -23,7 +23,8 @@ public class PeriodicCalculator extends JFrame implements ActionListener {
 		setLayout(new BorderLayout());
 		add(table, BorderLayout.CENTER);
 		
-		for (int i = 1; i < 118; i++){
+		for (
+				int i = 1; i < 118; i++) {
 			table.findButton(i).addActionListener(this);
 		}
 		
