@@ -115,16 +115,13 @@ public enum Elements {
 	Mt(109, "Meitnerium",268.0, "src/E109.png"),
 	Ds(110, "Damstadium",269.0, "src/E110.png"),
 	Rg(111, "Roentgerium",272.0, "src/E111.png"),
-	Uub(112, "Ununbium",285.0, "src/E112.png"),
-	Uut(113, "Ununtrium",286.0, "src/E113.png"),
-	Uuq(114, "Ununquadium",289.0, "src/E114.png"),
-	Uup(115, "Ununpentium",290.0, "src/E115.png"),
-	Uuh(116, "Ununhexium",293.0, "src/E116.png"),
-	Uus(117, "Ununseptium",294.0, "src/E117.png"),
-	Uuo(118, "Ununoctium",294.0, "src/E118.png");
-	
-	
-	
+	Cn(112, "Copernicium",285.0, "src/E112.png"),
+	Nh(113, "Nihonium",286.0, "src/E113.png"),
+	Fl(114, "Flerovium",289.0, "src/E114.png"),
+	Mc(115, "Moscovium",288.0, "src/E115.png"),
+	Lv(116, "Livermorium",292.0, "src/E116.png"),
+	Ts(117, "Tennessine",294.0, "src/E117.png"),
+	Og(118, "Oganesson",294.0, "src/E118.png");
 	
 	
 	
