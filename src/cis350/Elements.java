@@ -1,20 +1,18 @@
-/**
+/**********************************************************************
  * Elements is used to create a list of the elements in the 
  * periodic table to build the periodic table.
- * 
- * @since 10/18/2017
- * @author Greg, Eric, Natalie, Richard
- * @version 1.0
- */
+ * @author Eric, Greg, Natalie, Richard
+ * @version 10/18/2017
+ *********************************************************************/
 package cis350;
 
 import javax.swing.ImageIcon;
 
-/**
+/**********************************************************************
  * The enum sets a list of the elements, their weight 
  * and an image of the element from a periodic table.
  * @param
- */
+ *********************************************************************/
 public enum Elements {
 
 	/**

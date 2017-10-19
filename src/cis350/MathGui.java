@@ -5,43 +5,40 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-/**
- * 
+/**********************************************************************
+ * The Gui component containing the display of values and
+ * functional buttons
  * @author Eric,Greg,Richard,Natalie
- *
- */
+ * @version 10/18/2017
+ *********************************************************************/
 public class MathGui extends JPanel {
-	/**
+	
+	/******************************************************************
 	 * Generated serialVersionUID.
-	 */
+	 *****************************************************************/
 	private static final long serialVersionUID = -6505079102457304012L;
-	/**
-	 * molecule is the output representing elements.
-	 */
+	
+	/** molecule is the output representing elements **/
 	private JLabel molecule;
-	/**
-	 * atomicWt is the output of the overall weight.
-	 */
+
+	 /** atomicWt is the output of the overall weight **/
 	private JLabel atomicWt;
-	/**
-	 * mode is the output of which mode the buttons are in.
-	 */
+	
+	 /** mode is the output of which mode the buttons are in **/
 	private JLabel mode;
-	/**
-	 * clear button to empty the string.
-	 */
+
+	 /** clear button to empty the string **/
 	private JButton clear;
-	/**
-	 * undo makes an empty space.
-	 */
+	
+	/** currently empty button to be used later **/
 	private JButton undo;
-	/**
-	 * switchMode changes the behavior of the buttons.
-	 */
+	
+	/** Changes between add and remove modes **/
 	private JButton switchMode;
-	/**
-	 * MathGui is the gui for the program.
-	 */
+
+	/******************************************************************
+	 * default constructor for class
+	 *****************************************************************/
 	public MathGui() {
 		this.setLayout(new GridLayout(3, 3));
 		molecule = new JLabel(); 
@@ -60,45 +57,43 @@ public class MathGui extends JPanel {
 		add(switchMode);
 		
 	}
-	/**
-	 * return undo.
-	 * @return return undo
-	 */
-	public JButton getUndo() {
-		return undo;
-	}
-	/**
-	 * returns clear.
-	 * @return returns clear
-	 */
+
+	/******************************************************************
+	 * returns the clear button to the controller
+	 * @return clear the button to be used
+	 *****************************************************************/
 	public JButton getClear() {
 		return clear;
 	}
-	/**
-	 * returns switch mode.
-	 * @return returns switch mode
-	 */
+	
+	/******************************************************************
+	 * returns the mode switch button to the controller
+	 * @return switchMode the button to be sent
+	 *****************************************************************/
 	public JButton getMode() {
 		return switchMode;
 	}
-	/**
-	 * updateMolecule sets molecule to text.
-	 * @param text text of elements for molecule
-	 */
+	
+	/******************************************************************
+	 * sets the display text for the molecule
+	 * @param text the text to be displayed
+	 *****************************************************************/
 	public void updateMolecule(final String text) {
 		molecule.setText(text);
 	}
-	/**
-	 * updateWeight sets atomicWt to the argument weight.
-	 * @param weight atomic mass
-	 */
-	public void updateWeight(final double weight) {
-		atomicWt.setText(String.valueOf(weight));
+	
+	/******************************************************************
+	 * sets the displayed weight to the argument weight.
+	 * @param string the mass number to be used
+	 *****************************************************************/
+	public void updateWeight(final String string) {
+		atomicWt.setText(String.valueOf(string));
 	}
-	/**
-	 * undateMode takes string argument and sets mode.
-	 * @param newMode new string for mode
-	 */
+	
+	/******************************************************************
+	 * sets the text for the mode on the display
+	 * @param newMode the text to be used
+	 *****************************************************************/
 	public void updateMode(final String newMode) {
 		mode.setText(newMode);
 	}

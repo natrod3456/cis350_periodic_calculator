@@ -1,12 +1,20 @@
 package cis350;
 
+/**********************************************************************
+ * The math class handling the storage of data for the gui
+ * and performing the math functions
+ * @author Gregory, Eric, Richard, Natalie
+ *********************************************************************/
 import java.util.ArrayList;
 import java.util.Stack;
 
 public class MathCalc {
+	
+  /** contains all the elements used and their amount. */
   ArrayList<Elements> mlist;
+  
+  /** contains the converted string of elements to be displayed. */
   String display;
-  Stack<ArrayList<Elements>> previous;
 
   /******************************************************************
    * default constructor for class.
@@ -14,7 +22,6 @@ public class MathCalc {
   public MathCalc() {
     mlist = new ArrayList<Elements>();
     display = "";
-    previous = new Stack<ArrayList<Elements>>();
   }
 
   /******************************************************************
