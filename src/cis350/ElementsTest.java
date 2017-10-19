@@ -1,5 +1,9 @@
 /**
+ * ElementsTest is used to test the Elements class. 
  * 
+ * @since 10/18/2017
+ * @author Greg, Eric, Natalie, Richard
+ * @version 1.0
  */
 package cis350;
 
