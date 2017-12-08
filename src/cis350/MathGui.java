@@ -1,10 +1,18 @@
 package cis350;
 
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
+import java.awt.Insets;
+import java.util.ArrayList;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.ListSelectionModel;
 /**********************************************************************
  * The Gui component containing the display of values and
  * functional buttons
@@ -35,12 +43,16 @@ public class MathGui extends JPanel {
 	
 	/** Changes between add and remove modes **/
 	private JButton switchMode;
+	
+
+	
+	
 
 	/******************************************************************
 	 * default constructor for class
 	 *****************************************************************/
 	public MathGui() {
-		this.setLayout(new GridLayout(3, 3));
+		this.setLayout(new GridBagLayout());
 		molecule = new JLabel(); 
 		atomicWt = new JLabel();
 		mode = new JLabel();
@@ -49,12 +61,23 @@ public class MathGui extends JPanel {
 		undo = new JButton("");
 		switchMode = new JButton("Add/Remove");
 
-		add(molecule);
-		add(clear);
-		add(atomicWt);
-		add(undo);
-		add(mode);
-		add(switchMode);
+		//add(molecule);
+		GridBagConstraints loc = new GridBagConstraints();
+		loc.gridx = 0;
+		loc.gridy = 0;
+		add(clear, loc);
+		
+		//add(atomicWt);
+		//add(undo);
+		loc.gridx = 1;
+		loc.insets = new Insets(5,5,5,5);
+		add(mode, loc);
+		
+		loc.gridx = 2;
+		add(switchMode, loc);
+		
+		
+		
 		
 	}
 

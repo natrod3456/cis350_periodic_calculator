@@ -31,6 +31,11 @@ public class MathCalc {
     int count = 1;
     Elements current = null;
     display = "";
+    
+    if (mlist.isEmpty()){
+    	display = "empty";
+    	return display;
+    }
 
     // loops through all elements in list
     for (Elements e : mlist) {

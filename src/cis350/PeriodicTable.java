@@ -5,6 +5,9 @@ import java.awt.GridBagLayout;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 import java.awt.GridBagConstraints;
@@ -28,6 +31,16 @@ public class PeriodicTable extends JPanel {
 	 * A private MathGui variable. 
 	 */
 	private MathGui display;
+	
+	private StoicPane stoicDisplay;
+	
+	private JButton addButton;
+	
+	private JButton removeButton;
+	
+	
+	
+	
 
 /**********************************************************************
  * Constructor for PeriodicTable.
@@ -36,6 +49,7 @@ public PeriodicTable() {
 	GridBagLayout gridBagLayout = new GridBagLayout();
 	setLayout(gridBagLayout);
 	display = new MathGui();
+	stoicDisplay = new StoicPane();
 	
 	// creates an arraylist for all of the buttons, then fills 0 spot
 	// for convenience later
@@ -173,11 +187,18 @@ public PeriodicTable() {
 	}
 	
 	// adds the MathGui to the open space in the periodic table
-	loc.gridx = 2;
+	loc.gridx = 12;
 	loc.gridy = 0;
-	loc.gridwidth = 10;
-	loc.gridheight = 3;
+	loc.gridwidth = 5;
+	loc.gridheight = 1;
 	add(display, loc);
+	
+	loc.gridx = 1;
+    loc.gridy = 0;
+    loc.gridwidth = 12;
+    loc.gridheight = 3;
+    add(stoicDisplay, loc);
+    stoicDisplay.enabler();
 	
 
 	setVisible(true);
@@ -205,6 +226,43 @@ public MathGui getDisplay() {
  *********************************************************************/
 public ArrayList<ElementButton> getButtonList() {
 	return buttonList;
+}
+
+public void addToInputList(Elements element){
+	stoicDisplay.addToSelectedInput(element);
+}
+
+public void addToOutputList(Elements element){
+	stoicDisplay.addToSelectedOutput(element);
+}
+
+public void removeFromInputList(Elements element){
+	stoicDisplay.removeFromSelectedInput(element);
+}
+
+public void removeFromOutputList(Elements element){
+	stoicDisplay.removeFromSelectedOutput(element);
+}
+
+public void clearInput(){
+	stoicDisplay.clearSelectedInput();
+}
+
+public void clearOutput(){
+	stoicDisplay.clearSelectedOutput();
+}
+
+public void refresh(){
+	stoicDisplay.repaint();
+}
+
+public Boolean getMode(){
+	return stoicDisplay.getMode();
+}
+
+public void modeSwitch(){
+	stoicDisplay.modeSwitch();
+	stoicDisplay.enabler();
 }
 
 }
